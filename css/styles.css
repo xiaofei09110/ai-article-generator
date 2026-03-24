@@ -1,0 +1,183 @@
+/* 全局设置 */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --info-color: #4895ef;
+    --text-color: #333;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 科技感元素 */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+}
+
+/* 按钮样式 */
+.btn {
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* 评分系统 */
+.rating {
+    display: flex;
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+
+.rating-star {
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.rating-star:hover {
+    transform: scale(1.2);
+}
+
+/* 表单元素 */
+.form-control, .form-select {
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+    border-color: var(--primary-color);
+}
+
+/* 结果区域 */
+#article-content {
+    min-height: 200px;
+    max-height: 500px;
+    overflow-y: auto;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #e9ecef !important;
+}
+
+/* 公告栏 */
+#announcement {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* 加载动画 */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .rating {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 模态框样式 */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* 输入框高亮效果 */
+@keyframes highlight {
+    0% { border-color: #ddd; }
+    50% { border-color: var(--primary-color); box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25); }
+    100% { border-color: #ddd; }
+}
+
+.highlight {
+    animation: highlight 2s ease-in-out;
+}
+
+/* 页脚样式 */
+footer {
+    border-top: 1px solid #eee;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+} 

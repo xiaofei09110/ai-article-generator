@@ -1,0 +1,31 @@
+# 防止直接访问PHP目录
+Order deny,allow
+Deny from all
+
+# 允许API访问
+<Files ~ "^(generate|rating|announcement)\.php$">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# 保护配置文件
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# 保护敏感文件不被直接访问
+<FilesMatch "^(config\.php|.*\.log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# 允许正常访问API文件
+<Files "generate_topics.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# 设置PHP错误报告级别，生产环境中禁用错误显示
+php_flag display_errors off
+php_value error_reporting E_ALL 

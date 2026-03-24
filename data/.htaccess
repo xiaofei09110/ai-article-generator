@@ -1,0 +1,3 @@
+# 防止直接访问数据目录
+Order deny,allow
+Deny from all 
